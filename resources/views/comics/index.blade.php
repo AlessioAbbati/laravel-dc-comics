@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row row-cols-3">
         @foreach ($comics as $comic)
-            <div class="col">
+            <div class="col mb-3">
                 <div class="card h-100">
                     <img src="{{ $comic->thumb }}" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -24,9 +24,9 @@
                     </div>
                 </div>
             </div>
-    
         @endforeach
     </div>
+    {{ $comics->links() }}
 </div>
 
 @endsection
