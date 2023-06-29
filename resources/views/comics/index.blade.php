@@ -13,6 +13,7 @@
             <li class="list-group-item">{{ $comic->price }}</li>
             <li class="list-group-item">{{ $comic->series }}</li>
             <li class="list-group-item">{{ $comic->type }}</li>
+            <li class="list-group-item">{{ $comic->sale_date }}</li>
         </ul>
         <div class="card-body">
             <a href="{{ route('comics.show', ['comic' => $comic->id]) }}" class="btn btn-primary">Comic info</a>

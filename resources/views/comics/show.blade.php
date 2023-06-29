@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('contents')
-
-<p class="card-text">{{ $comic->description }}</p>
+<h1>{{ $comic->title }}</h1>
+<p class="card-text">{!! $comic->description !!}</p>
 
 @endsection
