@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('contents')
-
+<a class="btn btn-primary" href="{{ route('comics.create') }}">New card</a>
 <div class="container">
     <div class="row row-cols-3">
         @foreach ($comics as $comic)
