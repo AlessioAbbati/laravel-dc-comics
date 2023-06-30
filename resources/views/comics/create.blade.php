@@ -4,7 +4,7 @@
 
 <h1>Add new comic card</h1>
 
-<form method="POST" action="{{ route('pastas.store') }}">
+<form method="POST" action="{{ route('comics.store') }}">
     @csrf
 
     <div class="mb-3">
