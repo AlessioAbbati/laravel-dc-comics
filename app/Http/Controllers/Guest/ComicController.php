@@ -42,10 +42,11 @@ class ComicController extends Controller
         // validare i dati
         $request->validate([
             'title'        => 'required|string|min:5|max:100',
-            'thumb'           => 'url|max:200',
+            'thumb'           => 'string|max:200',
             'type'          => 'required|string|max:20',
-            'series'       => 'required|integer|min:5|max:255',
+            'series'       => 'required|string|min:5|max:255',
             'price'          => 'required|integer|min:100|max:2000',
+            'sale_date'     => 'required|date',
             'description'   => 'string',
         ]);
 
@@ -59,6 +60,7 @@ class ComicController extends Controller
         $newComic->type         = $data['type'];
         $newComic->series      = $data['series'];
         $newComic->price         = $data['price'];
+        $newComic->sale_date     = $data['sale_date'];
         $newComic->description  = $data['description'];
 
         $newComic->save();

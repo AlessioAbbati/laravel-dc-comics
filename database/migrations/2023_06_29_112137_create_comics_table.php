@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string("price", 50);
             $table->string("series", 100);
             $table->string("type", 50);
-            $table->dateTime("sale_date");
+            $table->date("sale_date");
             // $table->string("artists", 100);
             // $table->string("writers", 100);
             

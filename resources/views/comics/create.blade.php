@@ -78,6 +78,20 @@
     </div>
 
     <div class="mb-3">
+        <label for="sale_date" class="form-label">sale_date</label>
+        <input
+            type="date"
+            class="form-control @error('sale_date') is-invalid @enderror"
+            id="sale_date"
+            name="sale_date"
+            value="{{ old('sale_date') }}"
+        >
+        <div class="invalid-feedback">
+            @error('sale_date') {{ $message }} @enderror
+        </div>
+    </div>
+
+    <div class="mb-3">
         <label for="description" class="form-label">Description</label>
         <textarea
             class="form-control @error('description') is-invalid @enderror"
