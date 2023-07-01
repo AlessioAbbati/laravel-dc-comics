@@ -3,11 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>La Molisa</title>
+        <title>laravel dc comics</title>
         @vite('resources/js/app.js')
     </head>
     <body>
         <div class="container">
+            <header>
+                @include('header')
+            </header>
             <main>
                 @yield('contents')
             </main>
