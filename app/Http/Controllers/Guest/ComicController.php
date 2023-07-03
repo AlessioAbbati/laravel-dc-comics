@@ -12,10 +12,10 @@ class ComicController extends Controller
 
     private $validations = [
         'title'           => 'required|string|min:5|max:100',
-        'thumb'           => 'string|max:200',
+        'thumb'           => 'string|max:500',
         'type'            => 'required|string|max:20',
         'series'          => 'required|string|min:5|max:255',
-        'price'           => 'required|integer|min:100|max:2000',
+        'price'           => 'required|integer|max:2000',
         'sale_date'       => 'required|date',
         'description'     => 'string',
     ];
@@ -44,10 +44,10 @@ class ComicController extends Controller
         // validare i dati
         // $request->validate([
         //     'title'           => 'required|string|min:5|max:100',
-        //     'thumb'           => 'string|max:200',
+        //     'thumb'           => 'string|max:500',
         //     'type'            => 'required|string|max:20',
         //     'series'          => 'required|string|min:5|max:255',
-        //     'price'           => 'required|integer|min:100|max:2000',
+        //     'price'           => 'required|integer|max:2000',
         //     'sale_date'       => 'required|date',
         //     'description'     => 'string',
         // ]);
@@ -100,7 +100,7 @@ class ComicController extends Controller
         $comic->series             = $data['series'];
         $comic->price              = $data['price'];
         $comic->sale_date          = $data['sale_date'];
-        $comic->descriptione       = $data['description'];
+        $comic->description       = $data['description'];
         $comic->update(); // per aggiornare la riga
 
         return to_route('comics.show', ['comic' => $comic->id]);
