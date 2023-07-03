@@ -48,7 +48,7 @@
                             <form action="{{ route('comics.hardDelete', ['comic' => $comic->id]) }}" method="POST" class="d-inline-block">
                                 @csrf
                                 @method('delete')
-                                <button class="hard_delete btn btn-danger" href="">Elimina definitivamente</button>
+                                <button class="hard_delete btn btn-danger" href="">Hard Delete</button>
                             </form>
                         </div>
                     </div>

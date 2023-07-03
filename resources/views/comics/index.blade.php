@@ -10,7 +10,7 @@
             "{{ $comic->title }}" has been deleted!!
             <form action="{{ route("comics.restore", ['comic' => $comic] )}}" method="post">
                 @csrf
-                <button class="btn btn-warning">ripristina</button>
+                <button class="btn btn-warning">Restore</button>
             </form>
         </div>
     @endif
