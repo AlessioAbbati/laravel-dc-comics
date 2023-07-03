@@ -1,10 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
 
 header {
-    height: 5rem;
-    background-color: lightgrey;
-    padding-top: .5rem;
+    background-color: black;
     margin-bottom: 1rem;
+    .nav {
+        background-color: lightgrey;
+    }
 }
 
 h1 {
