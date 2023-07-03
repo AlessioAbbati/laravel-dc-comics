@@ -104,7 +104,6 @@
     </div>
 
     <button class="btn btn-primary">Salva</button>
-    <a class="btn btn-primary" href="{{ route('home') }}">home</a>
 </form>
 
 @endsection
