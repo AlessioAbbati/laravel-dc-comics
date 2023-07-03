@@ -8,6 +8,17 @@ use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
+    // dobbiamo validare i dati prima di eseguire il salvataggio del form
+    
+    private $validations = [
+        'title'           => 'required|string|min:5|max:100',
+        'thumb'           => 'string|max:200',
+        'type'            => 'required|string|max:20',
+        'series'          => 'required|string|min:5|max:255',
+        'price'           => 'required|integer|min:100|max:2000',
+        'sale_date'       => 'required|date',
+        'description'     => 'string',
+    ];
     
     public function index()
     {
@@ -26,16 +37,20 @@ class ComicController extends Controller
     
     public function store(Request $request)
     {
+
+        // richiamo la variabile per la validate
+        $request->validate($this->validations);
+
         // validare i dati
-        $request->validate([
-            'title'           => 'required|string|min:5|max:100',
-            'thumb'           => 'string|max:200',
-            'type'            => 'required|string|max:20',
-            'series'          => 'required|string|min:5|max:255',
-            'price'           => 'required|integer|min:100|max:2000',
-            'sale_date'       => 'required|date',
-            'description'     => 'string',
-        ]);
+        // $request->validate([
+        //     'title'           => 'required|string|min:5|max:100',
+        //     'thumb'           => 'string|max:200',
+        //     'type'            => 'required|string|max:20',
+        //     'series'          => 'required|string|min:5|max:255',
+        //     'price'           => 'required|integer|min:100|max:2000',
+        //     'sale_date'       => 'required|date',
+        //     'description'     => 'string',
+        // ]);
 
         $data = $request->all();
 
@@ -65,7 +80,7 @@ class ComicController extends Controller
     
     public function edit(Comic $comic)
     {
-        //
+        
     }
 
     
