@@ -42,7 +42,7 @@
                             <a href="{{ route('comics.show', ['comic' => $comic->id]) }}" class="btn btn-primary">Comic info</a>
                             <form action="{{ route('comics.restore', ['comic' => $comic->id]) }}" method="POST" class="d-inline-block">
                                 @csrf
-                                <button class="btn btn-success" href="">Ripristina</button>
+                                <button class="btn btn-warning" href="">Restored</button>
                             </form>
     
                             <form action="{{ route('comics.hardDelete', ['comic' => $comic->id]) }}" method="POST" class="d-inline-block">
