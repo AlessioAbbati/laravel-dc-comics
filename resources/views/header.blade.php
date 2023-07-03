@@ -1,7 +1,3 @@
-@extends('layouts.base')
 
-@section('contents')
-    
-    @include('partials.navbar')
+@include('partials.navbar')
    
-@endsection
