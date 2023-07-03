@@ -2,6 +2,29 @@
 
 @section('contents')
 
+    @if (session('delete_success'))
+        @php
+            $comic = session('delete_success')
+        @endphp
+        <div class="alert alert-danger">
+            "{{ $comic->title }}" has been deleted!!
+            <form action="{{ route("comics.restore", ['comic' => $comic] )}}" method="post">
+                @csrf
+                <button class="btn btn-warning">ripristina</button>
+            </form>
+        </div>
+    @endif
+
+    @if (session('restore_success'))
+        @php
+            $comic = session('restore_success')
+        @endphp
+        <div class="alert alert-success">
+            "{{ $comic->title }}" has been restorele
+            
+        </div>
+    @endif
+
 <div class="container">
     <div class="row row-cols-3">
         @foreach ($comics as $comic)
