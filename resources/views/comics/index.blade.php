@@ -20,7 +20,7 @@
             $comic = session('restore_success')
         @endphp
         <div class="alert alert-success">
-            "{{ $comic->title }}" has been restorele
+            "{{ $comic->title }}" has been restored!!
             
         </div>
     @endif
