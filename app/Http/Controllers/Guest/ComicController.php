@@ -8,11 +8,7 @@ use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         $comics = Comic::paginate(3); 
@@ -21,33 +17,24 @@ class ComicController extends Controller
         return view('comics.index', compact('comics'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
         return view('comics.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
         // validare i dati
         $request->validate([
-            'title'        => 'required|string|min:5|max:100',
+            'title'           => 'required|string|min:5|max:100',
             'thumb'           => 'string|max:200',
-            'type'          => 'required|string|max:20',
-            'series'       => 'required|string|min:5|max:255',
-            'price'          => 'required|integer|min:100|max:2000',
-            'sale_date'     => 'required|date',
-            'description'   => 'string',
+            'type'            => 'required|string|max:20',
+            'series'          => 'required|string|min:5|max:255',
+            'price'           => 'required|integer|min:100|max:2000',
+            'sale_date'       => 'required|date',
+            'description'     => 'string',
         ]);
 
         $data = $request->all();
@@ -55,13 +42,13 @@ class ComicController extends Controller
         // salvare i dati nel database
         $newComic = new Comic();
 
-        $newComic->title       = $data['title'];
+        $newComic->title          = $data['title'];
         $newComic->thumb          = $data['thumb'];
-        $newComic->type         = $data['type'];
-        $newComic->series      = $data['series'];
-        $newComic->price         = $data['price'];
-        $newComic->sale_date     = $data['sale_date'];
-        $newComic->description  = $data['description'];
+        $newComic->type           = $data['type'];
+        $newComic->series         = $data['series'];
+        $newComic->price          = $data['price'];
+        $newComic->sale_date      = $data['sale_date'];
+        $newComic->description    = $data['description'];
 
         $newComic->save();
 
@@ -69,46 +56,25 @@ class ComicController extends Controller
 		return redirect()->route('comics.show', ['comic' => $newComic->id]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Comic  $comic
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show(Comic $comic)
     {
         return view('comics.show', compact('comic'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Comic  $comic
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit(Comic $comic)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Comic  $comic
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, Comic $comic)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Comic  $comic
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy(Comic $comic)
     {
         //
