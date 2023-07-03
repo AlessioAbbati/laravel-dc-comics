@@ -1,9 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
 
-body {
-    background-image: url("../img/picsum16.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+header {
+    height: 5rem;
+    background-color: lightgrey;
+    padding-top: .5rem;
+    margin-bottom: 1rem;
 }
 
 h1 {
