@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ComicController extends Controller
 {
     // dobbiamo validare i dati prima di eseguire il salvataggio del form
-    
+
     private $validations = [
         'title'           => 'required|string|min:5|max:100',
         'thumb'           => 'string|max:200',
@@ -80,7 +80,7 @@ class ComicController extends Controller
     
     public function edit(Comic $comic)
     {
-        
+        return view('comics.edit', compact('comic'));
     }
 
     

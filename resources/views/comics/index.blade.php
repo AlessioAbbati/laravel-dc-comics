@@ -20,6 +20,7 @@
                     </ul>
                     <div class="card-body">
                         <a href="{{ route('comics.show', ['comic' => $comic->id]) }}" class="btn btn-primary">Comic info</a>
+                        <a href="{{ route('comics.edit', ['comic' => $comic->id]) }}" class="btn btn-warning">Edit</a>
                     </div>
                 </div>
             </div>
