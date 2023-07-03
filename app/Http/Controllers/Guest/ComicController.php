@@ -86,7 +86,24 @@ class ComicController extends Controller
     
     public function update(Request $request, Comic $comic)
     {
-        //
+        // richiamo la variabile per la validate
+
+        $request->validate($this->validations);
+
+        $data = $request->all();
+
+        // aggiornare i dati nel DB
+
+        $comic->title              = $data['title'];
+        $comic->thumb              = $data['thumb'];
+        $comic->type               = $data['type'];
+        $comic->series             = $data['series'];
+        $comic->price              = $data['price'];
+        $comic->sale_date          = $data['sale_date'];
+        $comic->descriptione       = $data['description'];
+        $comic->update(); // per aggiornare la riga
+
+        return to_route('comics.show', ['comic' => $comic->id]);
     }
 
     
