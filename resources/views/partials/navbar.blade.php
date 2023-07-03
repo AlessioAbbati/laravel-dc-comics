@@ -4,5 +4,6 @@
             <a class="btn btn-primary" href="{{ route('comics.index') }}">to the comics</a>
             <a class="btn btn-primary" href="{{ route('home') }}">home</a>
             <a class="btn btn-primary" href="{{ route('comics.create') }}">New card</a>
+            <a class="btn btn-primary" href="{{ route('comics.trashed') }}">cestino</a>
         </div>
     </div>
